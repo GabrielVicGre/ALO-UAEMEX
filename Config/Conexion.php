@@ -18,7 +18,7 @@
 
     //Initializes MySQLi
     $conexion = mysqli_init();
-    mysqli_ssl_set($conexion,NULL,NULL, "../Assets/SSL/BaltimoreCyberTrustRoot.crt.pem", NULL, NULL);  
+    //mysqli_ssl_set($conexion,NULL,NULL, "../Assets/SSL/BaltimoreCyberTrustRoot.crt.pem", NULL, NULL);  
     // Establish the connection
     mysqli_real_connect($conexion, $server, $user, $pass, $db,3306, NULL, MYSQLI_CLIENT_SSL);
     if (mysqli_connect_errno()) {
