@@ -24,4 +24,5 @@
     if (mysqli_connect_errno()) {
         echo "Fallo de conexion a la base de datos";
     }
+
 ?>
