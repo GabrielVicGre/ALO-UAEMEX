@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="login-panel shadow-box">
-            <h1>Sistema de Actividades de <b>Tutoría</b></h1>
+            <h1>Asistente de Ligas Oficiales -<b> FI</b></h1>
             <form action="Config/Ingresar.php" method="POST">
                 <table class="form-table">
                     <tbody>
