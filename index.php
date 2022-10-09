@@ -22,7 +22,7 @@
         </div>
         <div class="login-panel shadow-box">
             <h1>Asistente de Ligas Oficiales -<b> FI</b></h1>
-            <form action="Config/Ingresar.php" method="POST">
+            <form action="Config/IngresarPOO.php" method="POST">
                 <table class="form-table">
                     <tbody>
                         <tr>
@@ -39,7 +39,6 @@
                             <td colspan="2"><br>
                                 <input type="submit" name="Ingresar" value="Ingresar">
                             </td>
-
                         </tr>
                         <tr>
                             <td colspan="2"><br>
