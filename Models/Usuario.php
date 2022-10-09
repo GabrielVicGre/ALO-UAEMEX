@@ -1,5 +1,5 @@
 <?php
-require '../Config/Conexion.php';
+//require '../Config/Conexion.php';
 
 class Usuario{
     protected $id_usuario;
