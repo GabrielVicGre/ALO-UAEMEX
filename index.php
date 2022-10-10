@@ -45,11 +45,29 @@
                                 <a class="btnInvitado" href="Views/Invitado/index.php">Invitado</a>
                             </td>
                         </tr>
+                        <tr class="errorSesion" style="text-align: center; font-family: calibri; ">
+                            <td colspan="2">
+                                <?php
+                                if (isset($_GET['e'])) {
+                                    echo "<h4 style='color:#EC7063'> Usuario/Contraseña Incorrectos</h4>";
+                                }
+                                ?>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </form>
         </div>
     </main>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script>
+        $(document).ready(function() {
+            setTimeout(function() {
+                $(".errorSesion").fadeOut(1500);
+            }, 3000);
+        });
+    </script>
 </body>
 
 </html>
