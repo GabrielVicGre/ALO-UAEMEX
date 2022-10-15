@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="Assets/CSS/login.css">
     <link rel="stylesheet" href="Assets/CSS/inputs.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
@@ -48,9 +49,9 @@
                         <tr class="errorSesion" style="text-align: center; font-family: calibri; ">
                             <td colspan="2">
                                 <?php
-                                if (isset($_GET['e'])) {
+                                  if (isset($_GET['e'] )) {
                                     echo "<h4 style='color:#EC7063'> Usuario/Contraseña Incorrectos</h4>";
-                                }
+                                 }
                                 ?>
                             </td>
                         </tr>
@@ -68,6 +69,8 @@
             }, 3000);
         });
     </script>
+   
+
 </body>
 
 </html>

@@ -35,7 +35,7 @@ if ($query->rowCount() == 1) {
     }
     
 }else{  // No encuentra el registro
-    header("Location: ../index.php?e=1");
+    //echo '<script> swal("Hello world!"); </script>';
+    header("Location: ../index.php?e");
+   
 }
-
-?>
