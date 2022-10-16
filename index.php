@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <main>
+    <div class="cajaPrincipal">
         <div class="left-panel shadow-box">
             <div class="logo-container">
                 <img id="uaemex-logo" src="Assets/Images/negativo_color_vertical_2_lineas.png" alt="UAEMex Logo">
@@ -56,7 +56,8 @@
 
             </form>
         </div>
-    </main>
+    </div>
 
 </body>
+
 </html>
