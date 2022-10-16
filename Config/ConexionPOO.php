@@ -1,5 +1,4 @@
 <?php
-//global $connection;
 
     $user = "Administrador@sbd-alo-fi";
     $password = "3Fl760wnL8b@";

@@ -26,7 +26,7 @@ div.left-panel {
     width: 45%;
     height: 100%;
     margin-right: 5%;
-    background-color: red;
+    background-color: gray;
     background-image: linear-gradient(to right, #7E8E67, #989665);
     box-sizing: border-box;
 }
