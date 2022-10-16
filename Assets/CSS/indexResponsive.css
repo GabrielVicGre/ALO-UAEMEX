@@ -80,6 +80,7 @@ img.avatar {
   padding-top: 4%;
   padding-left: 10%;
   padding-right: 10%;
+  padding-bottom: 10%;
 }
 
 #contenedorAux {
@@ -100,15 +101,19 @@ img.avatar {
     }
 
     div.login-panel {
-      margin: 0 auto;
       width: 100%;
       height: 100%;
+       
+     
+  
     }
+
     
 }
 
 
 .errorSesion{
   text-align: center;
-  margin-top: 10%;
+
+  padding-top: 10px;
 }
