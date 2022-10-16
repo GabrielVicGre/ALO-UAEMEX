@@ -33,9 +33,9 @@ if ($query->rowCount() == 1) {
             echo "Eres Invitador";
             break;
     }
-    
-}else{  // No encuentra el registro
+} else {  // No encuentra el registro
     //echo '<script> swal("Hello world!"); </script>';
-    header("Location: ../index.php?e");
+     header("Location: ../index.php?e");
+     
    
 }

@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="Assets/CSS/login.css">
-    <link rel="stylesheet" href="Assets/CSS/inputs.css">
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="Assets/CSS/indexResponsive.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="Assets/Scripts/index.js"></script>
 </head>
 
 <body>
@@ -22,55 +23,39 @@
             </div>
         </div>
         <div class="login-panel shadow-box">
-            <h1>Asistente de Ligas Oficiales -<b> FI</b></h1>
-            <form action="Config/IngresarPOO.php" method="POST">
-                <table class="form-table">
-                    <tbody>
-                        <tr>
-                            <td><i class="fa fa-solid fa-user fa-2x icon-login"></i></td>
-                            <td>
-                                <input type="text" name="user" placeholder="usuario@uaemex.mx" required>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><i class="fa fa-lock fa-2x icon-login" aria-hidden="true"></i></td>
-                            <td><input type="password" placeholder="contraseña" name="password" required></td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><br>
-                                <input type="submit" name="Ingresar" value="Ingresar">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td colspan="2"><br>
-                                <a class="btnInvitado" href="Views/Invitado/index.php">Invitado</a>
-                            </td>
-                        </tr>
-                        <tr class="errorSesion" style="text-align: center; font-family: calibri; ">
-                            <td colspan="2">
-                                <?php
-                                  if (isset($_GET['e'] )) {
-                                    echo "<h4 style='color:#EC7063'> Usuario/Contraseña Incorrectos</h4>";
-                                 }
-                                ?>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <h1 class="tit">Asistente de Ligas Oficiales - <b> FI</b></h1>
+            <form class="Formlogin" action="Config/IngresarPOO.php" method="POST">
+
+                <div class="imgcontainer">
+                    <img src="https://icones.pro/wp-content/uploads/2021/02/icone-utilisateur-gris.png" alt="Avatar" class="avatar">
+                </div>
+
+                <div class="containerLogin">
+                    <label for="uname"><b>Usuario:</b></label>
+                    <input type="text" placeholder="correo@uaemex.mx" name="user" required>
+
+                    <label for="psw"><b>Contraseña:</b></label>
+                    <input type="password" placeholder="Ingresa tu contraseña" name="password" required>
+                    <div id="contenedorAux">
+                        <div>
+                            <button type="submit" name="Ingresar" value="Ingresar">Ingresar</button>
+                        </div>
+                        <div>
+                            <a class="btnInvitado" href="Views/Invitado/index.php"> Invitado</a>
+                        </div>
+                    </div>
+                    <div class="errorSesion">
+                        <?php
+                        if (isset($_GET['e'])) {
+                            echo "<h4 style='color:#EC7063'> Usuario/Contraseña Incorrectos</h4>";
+                        }
+                        ?>
+                    </div>
+                </div>
+
             </form>
         </div>
     </main>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-    <script>
-        $(document).ready(function() {
-            setTimeout(function() {
-                $(".errorSesion").fadeOut(1500);
-            }, 3000);
-        });
-    </script>
-   
-
 </body>
-
 </html>

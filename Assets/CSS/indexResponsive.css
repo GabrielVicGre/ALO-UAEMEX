@@ -1,0 +1,165 @@
+.Formlogin {
+  font-family: 'Calibri';
+  color: gray;
+  margin: 0 auto;
+}
+
+/* Full-width inputs */
+input[type=text],
+input[type=password] {
+  width: 100%;
+  padding: 10px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  box-sizing: border-box;
+  border-radius: 25px;
+  background-color: #ECF0F1;
+  border: 2px solid #D5DBDB;
+}
+
+input:focus {
+  outline: none;
+}
+
+.btnInvitado {
+  background-color: #007755;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  height: 40px;
+  border-left: 1px solid white;
+  text-align: center;
+  box-sizing: border-box;
+  width: 100%;
+
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #BEA52A;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  height: 40px;
+  border-left: 1px solid white;
+  text-align: center;
+  box-sizing: border-box;
+  width: 100%;
+  border-right: 1px solid white;
+
+}
+
+/* Add a hover effect for buttons */
+button:hover,
+.btnInvitado:hover {
+  opacity: 0.8;
+}
+
+
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+  text-align: center;
+  padding-top: 10%;
+}
+
+/* Avatar image */
+img.avatar {
+  width: 20%;
+  border-radius: 20%;
+
+}
+
+/* Add padding to containers */
+.containerLogin {
+  padding-top: 4%;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+#contenedorAux {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 8%;
+}
+
+#contenedorAux>div {
+  width: 50%;
+}
+
+
+
+@media (max-width: 700px) {
+    .left-panel {
+      display: none;
+    }
+
+    div.login-panel {
+      margin: 0 auto;
+      width: 90%;
+      height: 100%;
+    }
+    
+  }
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 200px) {
+    span.psw {
+        display: block;
+        float: none;
+    }
+
+    input[type=text],
+    input[type=password] {
+        width: 100%;
+        padding: 12px 5px;
+        margin: 2px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+
+    }
+
+    /* Set a style for all buttons */
+    button {
+        background-color: #BEA52A;
+        color: white;
+        padding: 14px 20px;
+        margin: 5px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+    }
+
+    .containerLogin {
+        padding-top: 50% !important;
+        margin-top: 50% !important;
+    }
+
+    #contenedorAux {
+        display: inline-block;
+        margin: 0 10px;
+        text-align: center !important;
+    }
+
+    #contenedorAux>div {
+        width: 100%;
+    }
+
+}
+
+
+.errorSesion{
+  text-align: center;
+  margin-top: 10%;
+}
