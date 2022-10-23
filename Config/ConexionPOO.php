@@ -4,7 +4,6 @@
     $password = "3Fl760wnL8b@";
     $server = "sbd-alo-fi.mysql.database.azure.com";
     $database = "bd_alofi";
-
     $options = array(
         PDO::MYSQL_ATTR_SSL_CA => '../Assets/SSL/BaltimoreCyberTrustRoot.crt.pem'
     );
