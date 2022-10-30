@@ -5,6 +5,6 @@
         <?php include "layouts/comunes/head-layout.php"; ?>
     </head>
     <body>
-        <?php include "layouts/canchas/header-layout.php"; ?>
+        <?php include "layouts/acercaDe/header-layout.php"; ?>
     </body>
 </html>

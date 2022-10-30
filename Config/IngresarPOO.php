@@ -23,7 +23,7 @@ if ($query->rowCount() == 1) {
         $user = $registro->user;
         $pass = $registro->password;
     }*/
-    header("Location: ../Views/Administrador/index.php");
+    header("Location: ../Views/Administrador/inicio.php");
 } else {  // No encuentra el registro
      header("Location: ../index.php?e");     
 }
