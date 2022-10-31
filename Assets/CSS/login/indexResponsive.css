@@ -50,12 +50,6 @@ img.avatar {
   padding-bottom: 10%;
 }
 
-.errorSesion{
-  margin-top: 40px;
-  text-align: center;
-  font-size: 12px !important;
-}
-
 @media (max-width: 950px) {
  
   div.left-panel {
@@ -124,3 +118,17 @@ img.avatar {
     }   
 }
 
+.errorSesion{
+  width: 98% !important;
+  margin-top: 40px;
+  border-radius: 15px !important;
+  padding-left: 0px;
+  background: #f1e3e1;
+}
+
+.errorTextSesion{
+  font-size: 17px !important;
+  color:#cc4c3e;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
