@@ -1,5 +1,5 @@
 <?php
-
+    
     $user = "Administrador@sbd-alo-fi";
     $password = "3Fl760wnL8b@";
     $server = "sbd-alo-fi.mysql.database.azure.com";

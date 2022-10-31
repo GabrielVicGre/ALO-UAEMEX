@@ -6,14 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Assets/CSS/login/index.css">
-    <link rel="stylesheet" href="Assets/CSS/login/indexResponsive.css">
-    
+    <link rel="stylesheet" href="Assets/CSS/login/indexResponsive.css">  
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-
     <script src="Assets/Scripts/login/index.js"></script>
-
 </head>
 
 <body>
@@ -30,46 +27,37 @@
             <div class="col-6 login-panel p-0 shadow-box">
                 <h3 class="tit">Asistente de Ligas Oficiales - <b> FI</b></h3>
                 <form class="Formlogin" action="Config/IngresarPOO.php" method="POST">
-
                     <div class="imgcontainer mt-4">
                         <img src="https://icones.pro/wp-content/uploads/2021/02/icone-utilisateur-gris.png" alt="Avatar" class="avatar">
                     </div>
-
                     <div class="containerLogin">
                         <label for="uname"><b>Usuario:</b></label>
                         <input type="text" placeholder="correo@uaemex.mx" name="user" required>
-
-
                         <label for="psw"><b>Contraseña:</b></label>
                         <input type="password" placeholder="Ingresa tu contraseña" name="password" required>
-
                         <div class="container text-center mt-4">
                             <div class="row">
                                 <div class="col-6 p-1">
                                     <button class="btnIngresar btn w-100 " type="submit" name="Ingresar" value="Ingresar">Ingresar</button>
                                 </div>
                                 <div class="col-6 p-1">
-                                    <a class="btnInvitado btn btn-success w-100" href="Views/Invitado/inicio.php"> Invitado</a>
+                                    <a class="btnInvitado btn btn-success w-100" href="Views/Invitado/inicio/index.php"> Invitado</a>
                                 </div>
                             </div>
                         </div>
-
                         <div class="errorSesion">
                             <?php
                             if (isset($_GET['e'])) {
-                                echo "<h4 style='color:#EC7063'> Usuario/Contraseña Incorrectos</h4>";
+                                echo "<h6 style='color:#EC7063'> Usuario/Contraseña Incorrectos</h6>";
                             }
                             ?>
                         </div>
                     </div>
-
                 </form>
             </div>
         </div>
     </div>
-
 </body>
-
 </html>
 
 <!-- GABRIEL VG -->
