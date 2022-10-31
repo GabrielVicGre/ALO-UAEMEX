@@ -10,13 +10,13 @@ body {
 }
 
 .container-logIn{
-  width: 65% !important;
+  width: 68% !important;
 }
 
 
 /*  CAJA LADO IZQUIERDO */
 div.left-panel {
-  width: 50%;
+  width: 48%;
   background-color: gray;
   background-image: linear-gradient(to right, #7e8e67, #989665);
   height: 85vh;
@@ -26,7 +26,7 @@ div.left-panel {
 /*  CAJA LADO DERECHO */
 div.login-panel {
   margin-top: 25px;
-  width: 49%;
+  width: 51%;
   margin-left: 1%;
   height: 85vh;
 }
