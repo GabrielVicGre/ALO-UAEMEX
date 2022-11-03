@@ -43,7 +43,7 @@
                                     <button class="btnIngresar btn w-100 " type="submit" name="Ingresar" value="Ingresar">Ingresar</button>
                                 </div>
                                 <div class="col-6 p-1">
-                                    <a class="btnInvitado btn btn-success w-100" href="Views/Invitado/inicio/index.php"> Invitado</a>
+                                    <a href="Views/Invitado/inicio/index.php" class="btnInvitado btn btn-success w-100" > Invitado</a>
                                 </div>
                             </div>
                         </div>

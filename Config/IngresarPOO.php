@@ -23,6 +23,7 @@ if (strlen($_POST['user'])>0 && strlen($_POST['password'])>0 ) {
             session_start();
             $_SESSION['usuario'] = $user;
             $_SESSION['password'] = $password;
+            $_SESSION['tipo_usuario'] = 'Administrador';
         }
         header("Location: ../Views/Administrador/inicio/index.php");
     } else {  // No encuentra el registro
