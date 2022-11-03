@@ -1,8 +1,7 @@
 <?php
 
-require '../Models/Usuario.php';
-include('../Config/ConexionPOO.php');
-
+require_once('ConexionPOO.php');
+global $conexion;
 
 if (strlen($_POST['user'])>0 && strlen($_POST['password'])>0 ) {
 

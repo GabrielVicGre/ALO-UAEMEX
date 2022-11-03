@@ -9,7 +9,7 @@ header {
   font-family: Calibri;
   text-align: center;
   border-top: 4px solid #eee;
-  border-bottom: 6px solid #4f6343;
+  border-bottom: 6px solid #2b7a60;
 }
 
 .headerNombre{
@@ -23,7 +23,7 @@ header {
 
 
 .sidebar {
-  background: linear-gradient(#586d4c , #405335);
+  background: linear-gradient(#197e4a , #2b8165);
 }
 
 .colorFondo {
@@ -45,13 +45,13 @@ header {
 /* Sidebar */
 
 .selected {
-  background: linear-gradient(to right, #718d5f, #7a8f6c);
-  border: 1px solid #6e8b5d;
+  background: linear-gradient(to right, #4e836c, #4b886d);
+  border: 1px solid #689b7e;
 
 }
 
 .btnSalir{
-  background-color: #6b805e;
+  background-color: #0e7957;
   border: none;
   font-size: 25px;
   padding: 15px;
@@ -61,9 +61,12 @@ header {
 }
 
 .btnSalir:hover{
-  background:  #788d6d;
+  background:  #136148;
 }
 
+.sidebar-heading{
+  background-color: #39634b !important;
+}
 
 .nav-link:hover {
   border: 1px solid #eee !important;
