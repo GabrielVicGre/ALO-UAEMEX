@@ -1,6 +1,5 @@
 <?php
-
-require_once('ConexionPOO.php');
+require('ConexionPOO.php');
 global $conexion;
 
 if (strlen($_POST['user'])>0 && strlen($_POST['password'])>0 ) {

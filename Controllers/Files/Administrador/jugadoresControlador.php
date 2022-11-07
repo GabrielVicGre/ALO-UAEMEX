@@ -1,5 +1,4 @@
 <?php
-
 require_once("../../../Models/Files/Administrador/jugadoresModelo.php");
 
 class jugadoresControlador {
