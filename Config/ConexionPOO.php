@@ -15,7 +15,7 @@
     }
 }*/
 
-/*
+
     $user = "Administrador@sbd-alo-fi";
     $password = "3Fl760wnL8b@";
     $server = "sbd-alo-fi.mysql.database.azure.com";
@@ -24,7 +24,7 @@
         PDO::MYSQL_ATTR_SSL_CA => '../Assets/SSL/BaltimoreCyberTrustRoot.crt.pem'
     );
     $conexion = new PDO('mysql:host='.$server.';port=3306;dbname='.$database , $user, $password, $options);
-*/
+
 
 
 /* ====================          CONEXIÓN A SERVIDOR LOCAL       ==================================*/
@@ -46,6 +46,7 @@ class ConexionPOO {
 }
 */
 
+/*
 $user = "root";
 $password = "";
 try {
@@ -56,5 +57,6 @@ try {
     print "¡Error!: " . $e->getMessage() . "<br/>";
     die();
 }
+*/
 
 ?>
