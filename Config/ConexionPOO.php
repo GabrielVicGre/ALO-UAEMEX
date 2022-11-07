@@ -25,7 +25,6 @@
     );
     $conexion = new PDO('mysql:host='.$server.';port=3306;dbname='.$database , $user, $password, $options);
 
-
 /* ====================          CONEXIÓN A SERVIDOR LOCAL       ==================================*/
 /*
 class ConexionPOO {
