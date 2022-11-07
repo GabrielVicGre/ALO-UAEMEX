@@ -1,5 +1,6 @@
 <?php
-require_once("../../../Models/Files/Administrador/equiposModelo.php");
+$ruta =  $_SERVER['DOCUMENT_ROOT'];
+include_once($ruta."/Models/Administrador/equiposModelo.php");
 
 class equiposControlador {
     private $model;

@@ -4,8 +4,9 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
     header("Location: ../../../index.php");
 } else {
     $_SESSION['opcion'] = 'equipos';
-    require_once("../../../Controllers/Files/Administrador/equiposControlador.php");
-    require_once("../../../Controllers/Files/Administrador/jugadoresControlador.php");
+    $ruta =  $_SERVER['DOCUMENT_ROOT'];
+    include_once($ruta."/Controllers/Administrador/equiposControlador.php");
+    include_once($ruta."/Controllers/Administrador/jugadoresControlador.php");
 
     $equiController = new equiposControlador();
     $equipo = $equiController->getDatosEquipoById($_GET['id_equipo']);

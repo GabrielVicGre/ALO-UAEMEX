@@ -1,5 +1,7 @@
 <?php
-require('ConexionPOO.php');
+$ruta =  $_SERVER['DOCUMENT_ROOT'];
+include_once($ruta.'/Config/ConexionPOO.php');
+
 global $conexion;
 
 if (strlen($_POST['user'])>0 && strlen($_POST['password'])>0 ) {
