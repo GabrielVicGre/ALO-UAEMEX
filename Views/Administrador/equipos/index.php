@@ -4,8 +4,8 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
     header("Location: ../../../index.php");
 } else {
     $_SESSION['opcion'] = 'equipos';
-    require_once("../../../Controllers/Files/Administrador/equiposController.php");
-    $equiController = new equiposController();
+    require_once("../../../Controllers/Files/Administrador/equiposControlador.php");
+    $equiController = new equiposControlador();
 }
 ?>
 
@@ -45,7 +45,6 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
                     </div>
                 </div>
 
-                <!--<a class="btn btn-success" href="Views/Administrador/equipos/create.php">Nuevo</a>-->
                 <?php
                 if (isset($_POST['add'])) {
                     $equiController->addEquipo();
@@ -106,8 +105,8 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
                                                     <button class="btn btn-sm text-white" style="background-color:#85929E" type="submit" name="delete" value="delete">
                                                         <i class='bi bi-x-circle'></i> </button>
 
-                                                    <button class="btn btn-sm text-white" style="background-color:#138D75" type="submit" name="action" value="edit">
-                                                        <i class="bi bi-people"></i> </button>
+                                                    <a href="Views/Administrador/equipos/integrantes.php?id_equipo=<?php echo $reg->id_equipo ?>" class="btn btn-sm text-white" 
+                                                        style="background-color:#138D75"> <i class="bi bi-people"></i> </a>
 
                                                 </td>
                                                 <input type="hidden" name="id_equipo" value="<?php echo $reg->id_equipo ?>">
@@ -123,7 +122,7 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
                     </div>
                 </div>
             </main>
-            
+
         </div>
     </div>
 

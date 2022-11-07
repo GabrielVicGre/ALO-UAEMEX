@@ -1,12 +1,12 @@
 <?php
 
-require_once("../../../Models/Files/Administrador/equipos_Modelo.php");
+require_once("../../../Models/Files/Administrador/equiposModelo.php");
 
-class equiposController {
+class equiposControlador {
     private $model;
     
     function __construct() {
-        $this->model = new equipos_Modelo();
+        $this->model = new equiposModelo();
     }
 
     function listaEquipos(){
@@ -40,6 +40,7 @@ class equiposController {
         $fr = $_POST['fecha_registro'];
         $this->model->updateEquipo($id_equipo, $nombre, $desc, $fr);
     }
+
 
 
 

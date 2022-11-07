@@ -1,7 +1,7 @@
 <?php
 require_once("../../../Config/ConexionPOO.php");
 
-class equipos_Modelo{
+class equiposModelo{
 
     public function getEquipos(){
         global $conexion;
@@ -32,7 +32,7 @@ class equipos_Modelo{
         $query = $conexion->prepare($sql);
         $query->execute();
         $results = $query->fetchAll(PDO::FETCH_OBJ);
-        return $results;
+        return $results[0];
     }
 
     public function updateEquipo($id_equipo, $nombre, $desc, $fr){
