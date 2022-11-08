@@ -4,14 +4,14 @@ $num_equipos =  $inicioController->getTotalEquipos();
 ?>
 <div class="card text-center mt-4">
     <div class="card-header">
-        <h5 class="card-title text-muted">Status actual</h5>
+        <h5 class="card-title text-muted pt-2 pb-1">Status actual</h5>
     </div>
     <div class="card-body">
         <div class="container">
-            <div class="row">
-                <div class="col">
+            <div class="row mt-3 mb-2">
+                <div class="col-6 col-xl-4">
                     <div class="card mb-3" style="background-color:#E8F6F3;">
-                        <div class="card-header text-muted h2">Equipos</div>
+                        <div class="card-header text-muted h3">Equipos</div>
                         <div class="card-body">
                             <h2 class="card-title"></h2>
                             <div class="p-3">
@@ -25,9 +25,9 @@ $num_equipos =  $inicioController->getTotalEquipos();
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-6 col-xl-4">
                     <div class="card mb-3" style="background-color:#E8F6F3;">
-                        <div class="card-header text-muted h2">Jugadores</div>
+                        <div class="card-header text-muted h3">Jugadores</div>
                         <div class="card-body">
                             <h2 class="card-title"></h2>
                             <div class="p-3">
@@ -42,9 +42,9 @@ $num_equipos =  $inicioController->getTotalEquipos();
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-12 col-xl-4">
                     <div class="card mb-3" style="background-color:#E8F6F3;">
-                        <div class="card-header text-muted h2">Canchas</div>
+                        <div class="card-header text-muted h3">Canchas</div>
                         <div class="card-body">
                             <h2 class="card-title"></h2>
                             <div class="p-3">
