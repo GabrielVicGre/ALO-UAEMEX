@@ -147,6 +147,7 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
         if (window.history.replaceState) { // PARA NO ENVIAR EL FORMULARIO DOS VECES
             window.history.replaceState(null, null, window.location.href);
         }
+        /*
         $(document).ready(function() {
             $('#tabla-jugadores').DataTable({
                 responsive: true,
@@ -157,7 +158,7 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
                 "lengthMenu": [[4, 10, 15, -1], [4, 10, 15,"Todos"]],
               
             });
-        });
+        });*/
     </script>
 
 </body>
