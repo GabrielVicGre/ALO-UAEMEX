@@ -21,7 +21,11 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
 
 <head>
     <?php include "../layouts/head-layout.php"; ?>
-
+    <style>
+     /*   .dataTables_length{
+            text-align: left !important;
+        }*/
+    </style>
 </head>
 
 <body>
@@ -84,19 +88,18 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
                         ?>
                     </div>
                 </div>
-                        <br>
 
-                <div class="container text-center" style="width: 99%;">
-                    <div class="table-responsive">
-                        <table id="" class="table" style="width:100%">
-                            <thead>
+                <div class="pt-3 container text-center">
+                    <div class="p-1 table-responsive">
+                        <table id="tabla-jugadores" class="text-center align-middle table table-striped table-bordered nowrap" style="width:100%">
+                            <thead class="text-white" style="background-color:#16A085;">
                                 <tr>
-                                    <th> Nombre </th>
-                                    <th> Edad </th>
-                                    <th> ¿Es capitán? </th>
-                                    <th> Correo</th>
-                                    <th> Licenciatura </th>
-                                    <th> Opciones</th>
+                                    <th class="text-center"> Nombre </th>
+                                    <th class="text-center"> Edad </th>
+                                    <th class="text-center"> ¿Es capitán? </th>
+                                    <th class="text-center"> Correo</th>
+                                    <th class="text-center"> Licenciatura </th>
+                                    <th class="text-center"> Opciones</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -144,6 +147,17 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
         if (window.history.replaceState) { // PARA NO ENVIAR EL FORMULARIO DOS VECES
             window.history.replaceState(null, null, window.location.href);
         }
+        $(document).ready(function() {
+            $('#tabla-jugadores').DataTable({
+                responsive: true,
+                autoWidth: false,
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
+                },
+                "lengthMenu": [[4, 10, 15, -1], [4, 10, 15,"Todos"]],
+              
+            });
+        });
     </script>
 
 </body>

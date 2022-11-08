@@ -8,13 +8,13 @@ $equipo =  $equiController->getDatosEquipoById($_GET['id_equipo']);
         <input type="hidden" name="id_equipo" value="<?php echo $_GET['id_equipo']; ?>">
 
         <label for="nombre" class="form-label">Nombre: </label>
-        <input type="text" name="nombre" class="form-control" id="nombre" value="<?php echo $equipo->nombre; ?> ">
+        <input required type="text" name="nombre" class="form-control" id="nombre" value="<?php echo $equipo->nombre; ?> ">
 
         <label for="descripcion" class="form-label mt-4">Descripción: </label>
-        <input type="text" name="descripcion" class="form-control" id="descripcion" value="<?php echo $equipo->descripcion; ?> ">
+        <input required type="text" name="descripcion" class="form-control" id="descripcion" value="<?php echo $equipo->descripcion; ?> ">
 
         <label for="fecha_registro" class="form-label mt-4">Fecha Registro:</label>
-        <input type="date" name="fecha_registro" class="form-control" id="fecha_registro" value="<?php echo $equipo->fecha_registro;?>">
+        <input required type="date" name="fecha_registro" class="form-control" id="fecha_registro" value="<?php echo $equipo->fecha_registro;?>">
     </div>
     <div class="mt-4">
         <input type="submit" style="background-color:#C5A42A" class="btn btn-sm text-white" name="update" value="Guardar">

@@ -5,7 +5,7 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
 } else {
     $_SESSION['opcion'] = 'equipos';
     $ruta =  $_SERVER['DOCUMENT_ROOT'];
-    include_once($ruta."/Controllers/Administrador/equiposControlador.php");
+    include_once($ruta . "/Controllers/Administrador/equiposControlador.php");
     $equiController = new equiposControlador();
 }
 ?>
@@ -79,15 +79,15 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
                             </div>
                         </div>
                         <div class="col-12 col-lg-8">
-                            <div class="p-3 bg-light">
-                                <h6 class="pb-4 text-center">Equipos Registradas</h6>
-                                <div class="table-responsive">
-                                    <table class="table table-bordered text-center">
+                            <div class="p-2 bg-light">
+                                <h6 class="pb-4 pt-2 text-center">Equipos Registradas</h6>
+                                <div class="p-1 table-responsive">
+                                    <table id="tabla-equipos" class="text-center align-middle table table-striped table-bordered nowrap" style="width:100%">
                                         <thead class="text-white" style="background-color:#16A085;">
-                                            <th> Nombre </th>
-                                            <th> Descripción </th>
-                                            <th> Fecha registro </th>
-                                            <th> Opciones</th>
+                                            <th class="text-center"> Nombre </th>
+                                            <th class="text-center"> Descripción </th>
+                                            <th class="text-center"> Fecha registro </th>
+                                            <th class="text-center"> Opciones</th>
                                         </thead>
                                         <?php
                                         $registros = $equiController->listaEquipos();
@@ -107,8 +107,7 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
                                                         <button class="btn btn-sm text-white" style="background-color:#85929E" type="submit" name="delete" value="delete">
                                                             <i class='bi bi-x-circle'></i> </button>
 
-                                                        <a href="Views/Administrador/equipos/integrantes.php?id_equipo=<?php echo $reg->id_equipo ?>" class="btn btn-sm text-white" 
-                                                            style="background-color:#138D75"> <i class="bi bi-people"></i> </a>
+                                                        <a href="Views/Administrador/equipos/integrantes.php?id_equipo=<?php echo $reg->id_equipo ?>" class="btn btn-sm text-white" style="background-color:#138D75"> <i class="bi bi-people"></i> </a>
 
                                                     </td>
                                                     <input type="hidden" name="id_equipo" value="<?php echo $reg->id_equipo ?>">
@@ -132,6 +131,17 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
         if (window.history.replaceState) { // PARA NO ENVIAR EL FORMULARIO DOS VECES
             window.history.replaceState(null, null, window.location.href);
         }
+        $(document).ready(function() {
+            $('#tabla-equipos').DataTable({
+                responsive: true,
+                autoWidth: false,
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"
+                },
+                "lengthMenu": [[5, 10, 15, -1], [5, 10, 15,"Todos"]],
+               
+            });
+        });
     </script>
 
 
