@@ -57,18 +57,14 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
                 if (isset($_POST['add'])) {
                     $jugController->addJugador();
                 }
-                /*   if (isset($_POST['update'])) {
+               if (isset($_POST['update'])) {
                     $jugController->editJugador();
                 }
                 if (isset($_GET['delete'])) {
                     $jugController->deleteJugador();
                 }
-            */
+            
                 ?>
-
-
-
-
 
                 <div class="container">
                     <div class="pt-1 bg-light pb-2" style="border-radius: 15px;">
@@ -127,6 +123,8 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
                                             </td>
                                             <input type="hidden" name="id_licenciatura" value="<?php echo $reg->id_licenciatura ?>">
                                             <input type="hidden" name="id_equipo" value="<?php echo $reg->id_equipo ?>">
+                                            <input type="hidden" name="id_jugador" value="<?php echo $reg->id_jugador ?>">
+
                                         </form>
                                     </tr>
                                 <?php

@@ -30,20 +30,32 @@ class jugadoresControlador {
        // header("Location: ../../../Views/Administrador/equipos/".$nombre);
     }
 
-    /*
-    function deleteJugador(){
-        $id_equipo = $_GET['id_equipo'];
-        $this->model->deleteEquipo($id_equipo);
+    function getDatosJugadorById($id_jugador){
+        $registro = $this->model->getDatosJugador($id_jugador);
+        return $registro;
     }
 
+
     function editJugador(){
-        $id_equipo = $_POST['id_equipo'];
-        $nombre = $_POST['nombre'];
-        $desc = $_POST['descripcion'];
-        $fr = $_POST['fecha_registro'];
-        $this->model->updateEquipo($id_equipo, $nombre, $desc, $fr);
+        $id_j = $_POST['id_jugador'];
+        $nom = $_POST['nombre'];
+        $edad = $_POST['edad'];
+        $es_cap = $_POST['es_capitan'];
+        $correo = $_POST['correo'];
+        $id_lic = $_POST['id_licenciatura'];
+        $id_equi = $_POST['id_equipo'];
+        $this->model->updateJugador($id_j,$nom,$edad,$es_cap,$correo,$id_lic,$id_equi);
     }
-    */
+   
+    
+    function deleteJugador(){
+        $id_jugador = $_GET['id_jugador'];
+        $this->model->deleteJugador($id_jugador);
+    } 
+
+   
+
+   
 
     
 

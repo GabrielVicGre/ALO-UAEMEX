@@ -24,13 +24,40 @@ class jugadoresModelo{
         $query->execute();
     }
 
-    function ObtenerLicenciaturas(){
+    public function ObtenerLicenciaturas(){
         global $conexion;
         $sql = "SELECT * FROM licenciaturas";
         $query = $conexion->prepare($sql);
         $query->execute();
         $licenciaturas = $query->fetchAll(PDO::FETCH_OBJ);
         return $licenciaturas;
+    }
+
+
+    public function getDatosJugador($id_jugador){
+        global $conexion;
+        $sql = "SELECT * FROM jugadores WHERE id_jugador=$id_jugador";
+        $query = $conexion->prepare($sql);
+        $query->execute();
+        $results = $query->fetchAll(PDO::FETCH_OBJ);
+        return $results[0];
+    }
+
+    public function updateJugador($id_j,$nom,$edad,$es_cap,$correo,$id_lic,$id_equi){
+        global $conexion;
+        $sql = "UPDATE jugadores".
+        " SET nombre='$nom',edad='$edad',es_capitan='$es_cap',correo='$correo',
+        id_licenciatura='$id_lic',id_equipo='$id_equi' ".
+        "WHERE id_jugador = $id_j";
+        $query = $conexion->prepare($sql);
+        $query->execute();
+    }
+
+    public function deleteJugador($id_jugador){
+        global $conexion;
+        $sql = "DELETE FROM jugadores WHERE id_jugador=$id_jugador";
+        $query = $conexion->prepare($sql);
+        $query->execute();
     }
 
 
