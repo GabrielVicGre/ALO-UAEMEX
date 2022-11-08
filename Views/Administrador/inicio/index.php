@@ -4,6 +4,10 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
     header("Location: ../../../index.php");
 } else {
     $_SESSION['opcion'] = 'inicio';
+    $ruta =  $_SERVER['DOCUMENT_ROOT'];
+    include_once($ruta."/Controllers/Administrador/inicioControlador.php");
+    $inicioController = new inicioControlador();
+
 }
 ?>
 
@@ -12,6 +16,15 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
 
 <head>
     <?php include "../layouts/head-layout.php"; ?>
+    <style>
+        .totales{
+            text-decoration: none;
+            color: #34495E;
+        }
+        .totales:hover{
+            color: #283747;
+        }
+    </style>
 </head>
 
 <body>

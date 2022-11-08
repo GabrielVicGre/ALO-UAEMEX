@@ -45,6 +45,14 @@ class equiposModelo{
         $query->execute();
     }
 
+    public function RecuperaNumeroEquipos(){
+        global $conexion;
+        $sql = "SELECT * FROM equipos";
+        $query = $conexion->prepare($sql);
+        $query->execute();
+        $total = $query->rowCount();
+        return $total;
+    }
 
 
 }

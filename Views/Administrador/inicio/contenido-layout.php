@@ -1,68 +1,66 @@
+<?php
+$num_equipos =  $inicioController->getTotalEquipos();
 
+?>
 <div class="card text-center mt-4">
     <div class="card-header">
-        <h5 class="card-title">Status actual</h5>
+        <h5 class="card-title text-muted">Status actual</h5>
     </div>
     <div class="card-body">
         <div class="container">
             <div class="row">
-                <div class="col-4 ">
-                    <div class="card  text-white bg-primary mb-3">
-                        <div class="card-header">Header</div>
+                <div class="col">
+                    <div class="card mb-3" style="background-color:#E8F6F3;">
+                        <div class="card-header text-muted h2">Equipos</div>
                         <div class="card-body">
-                            <h5 class="card-title">Primary card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <h2 class="card-title"></h2>
+                            <div class="p-3">
+                                <img style="width: 50%;" src="https://cdn-icons-png.flaticon.com/512/4341/4341586.png" class="img-fluid" alt="...">
+                            </div>
+
+                            <a href="Views/Administrador/inicio/index.php" class="totales">
+                                <b class="h2"> <?php echo $num_equipos ?> </b><br>
+                                Equipos registrados
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
-                    <div class="card text-white bg-secondary mb-3">
-                        <div class="card-header">Header</div>
+                <div class="col">
+                    <div class="card mb-3" style="background-color:#E8F6F3;">
+                        <div class="card-header text-muted h2">Jugadores</div>
                         <div class="card-body">
-                            <h5 class="card-title">Secondary card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <h2 class="card-title"></h2>
+                            <div class="p-3">
+                                <img style="width: 50%;" src="https://cdn-icons-png.flaticon.com/512/2348/2348811.png" class="img-fluid" alt="...">
+                            </div>
+
+                            <a href="Views/Administrador/inicio/index.php" class="totales">
+                                <b class="h2"> <?php echo $num_equipos ?> </b><br>
+                                Jugadores registrados
+                            </a>
+
                         </div>
                     </div>
                 </div>
-                <div class="col-4">
-                    <div class="card text-white bg-success mb-3">
-                        <div class="card-header">Header</div>
+                <div class="col">
+                    <div class="card mb-3" style="background-color:#E8F6F3;">
+                        <div class="card-header text-muted h2">Canchas</div>
                         <div class="card-body">
-                            <h5 class="card-title">Success card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-4 ">
-                    <div class="card  text-white bg-primary mb-3">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">
-                            <h5 class="card-title">Primary card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card text-white bg-secondary mb-3">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">
-                            <h5 class="card-title">Secondary card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card text-white bg-success mb-3">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">
-                            <h5 class="card-title">Success card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <h2 class="card-title"></h2>
+                            <div class="p-3">
+                                <img style="width: 50%;" src="https://cdn-icons-png.flaticon.com/512/3461/3461128.png" class="img-fluid" alt="...">
+                            </div>
+
+                            <a href="Views/Administrador/inicio/index.php" class="totales">
+                                <b class="h2"> <?php echo $num_equipos ?> </b><br>
+                                Canchas registrados
+                            </a>
+
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
     <div class="card-footer text-muted">
