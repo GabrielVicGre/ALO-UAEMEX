@@ -9,7 +9,7 @@ $num_equipos =  $inicioController->getTotalEquipos();
     <div class="card-body">
         <div class="container">
             <div class="row mt-3 mb-2">
-                <div class="col-6 col-xl-4">
+                <div class="col-6 col-lg-4">
                     <div class="card mb-3" style="background-color:#E8F6F3;">
                         <div class="card-header text-muted h3">Equipos</div>
                         <div class="card-body">
@@ -25,7 +25,7 @@ $num_equipos =  $inicioController->getTotalEquipos();
                         </div>
                     </div>
                 </div>
-                <div class="col-6 col-xl-4">
+                <div class="col-6 col-lg-4">
                     <div class="card mb-3" style="background-color:#E8F6F3;">
                         <div class="card-header text-muted h3">Jugadores</div>
                         <div class="card-body">
@@ -42,7 +42,7 @@ $num_equipos =  $inicioController->getTotalEquipos();
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-xl-4">
+                <div class="col-12 col-lg-4">
                     <div class="card mb-3" style="background-color:#E8F6F3;">
                         <div class="card-header text-muted h3">Canchas</div>
                         <div class="card-body">
