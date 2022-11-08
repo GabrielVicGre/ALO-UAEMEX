@@ -17,7 +17,6 @@ $num_equipos =  $inicioController->getTotalEquipos();
                             <div class="p-3">
                                 <img style="width: 50%;" src="https://cdn-icons-png.flaticon.com/512/4341/4341586.png" class="img-fluid" alt="...">
                             </div>
-
                             <a href="Views/Administrador/inicio/index.php" class="totales">
                                 <b class="h2"> <?php echo $num_equipos ?> </b><br>
                                 Equipos registrados

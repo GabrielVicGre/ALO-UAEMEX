@@ -71,7 +71,7 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
 
 
                 <div class="container">
-                    <div class="pt-1 bg-light">
+                    <div class="pt-1 bg-light pb-2" style="border-radius: 15px;">
                         <?php
                         $action = isset($_GET['action']) ? $_GET['action'] : "new";
                         switch ($action) {
@@ -91,56 +91,52 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
                         <br>
 
                 <div class="container text-center" style="width: 99%;">
-
-                    <table id="" class="table" style="width:100%">
-                        <thead>
-                            <tr>
-                                <th> Nombre </th>
-                                <th> Edad </th>
-                                <th> Capitan </th>
-                                <th> Correo</th>
-                                <th> Licenciatura </th>
-                                <th> Opciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $jugadores = $jugController->getJugadoresByEquipoId($_GET['id_equipo']);
-                            foreach ($jugadores as $reg) {
-                            ?>
+                    <div class="table-responsive">
+                        <table id="" class="table" style="width:100%">
+                            <thead>
                                 <tr>
-                                    <form action="Views/Administrador/equipos/integrantes.php?id_equipo=<?php echo $_GET['id_equipo'] ?>" method="GET">
-                                        <td><?php echo $reg->nombre ?></td>
-                                        <td><?php echo $reg->edad ?></td>
-                                        <td><?php echo $reg->es_capitan ?></td>
-                                        <td><?php echo $reg->correo ?></td>
-                                        <td><?php echo $reg->licenciatura ?></td>
-                                        <td>
-                                            <button class="btn btn-sm text-white" style="background-color:#CEA228" type="submit" name="action" value="edit">
-                                                <i class="bi bi-pencil-square"></i>
-                                            </button>
-
-                                            <button class="btn btn-sm text-white" style="background-color:#85929E" type="submit" name="delete" value="delete">
-                                                <i class='bi bi-x-circle'></i> </button>
-
-                                            <a href="Views/Administrador/equipos/integrantes.php?id_equipo=<?php echo $reg->id_equipo ?>" class="btn btn-sm text-white" style="background-color:#138D75"> <i class="bi bi-people"></i> </a>
-                                        </td>
-                                        <input type="hidden" name="id_licenciatura" value="<?php echo $reg->id_licenciatura ?>">
-                                        <input type="hidden" name="id_equipo" value="<?php echo $reg->id_equipo ?>">
-                                    </form>
+                                    <th> Nombre </th>
+                                    <th> Edad </th>
+                                    <th> ¿Es capitán? </th>
+                                    <th> Correo</th>
+                                    <th> Licenciatura </th>
+                                    <th> Opciones</th>
                                 </tr>
-                            <?php
-                            }
-                            ?>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                <?php
+                                $jugadores = $jugController->getJugadoresByEquipoId($_GET['id_equipo']);
+                                foreach ($jugadores as $reg) {
+                                ?>
+                                    <tr>
+                                        <form action="Views/Administrador/equipos/integrantes.php?id_equipo=<?php echo $_GET['id_equipo'] ?>" method="GET">
+                                            <td><?php echo $reg->nombre ?></td>
+                                            <td><?php echo $reg->edad ?></td>
+                                            <td><?php echo $reg->es_capitan ?></td>
+                                            <td><?php echo $reg->correo ?></td>
+                                            <td><?php echo $reg->licenciatura ?></td>
+                                            <td>
+                                                <button class="btn btn-sm text-white" style="background-color:#CEA228" type="submit" name="action" value="edit">
+                                                    <i class="bi bi-pencil-square"></i>
+                                                </button>
+
+                                                <button class="btn btn-sm text-white" style="background-color:#85929E" type="submit" name="delete" value="delete">
+                                                    <i class='bi bi-x-circle'></i> </button>
+
+                                                <a href="Views/Administrador/equipos/integrantes.php?id_equipo=<?php echo $reg->id_equipo ?>" class="btn btn-sm text-white" style="background-color:#138D75"> <i class="bi bi-people"></i> </a>
+                                            </td>
+                                            <input type="hidden" name="id_licenciatura" value="<?php echo $reg->id_licenciatura ?>">
+                                            <input type="hidden" name="id_equipo" value="<?php echo $reg->id_equipo ?>">
+                                        </form>
+                                    </tr>
+                                <?php
+                                }
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>            
                     <a class="btn btn-sm btn-success" href="Views/Administrador/equipos/index.php">Regresar</a>
-
-
                 </div>
-
-
-
 
             </main>
 

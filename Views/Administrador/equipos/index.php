@@ -60,7 +60,7 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
 
                 <div class="container">
                     <div class="row">
-                        <div class="col-3">
+                        <div class="col-12 col-lg-4">
                             <div class="p-3 bg-light">
                                 <?php
                                 $action = isset($_GET['action']) ? $_GET['action'] : "new";
@@ -78,48 +78,49 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
                                 ?>
                             </div>
                         </div>
-                        <div class="col-9">
+                        <div class="col-12 col-lg-8">
                             <div class="p-3 bg-light">
                                 <h6 class="pb-4 text-center">Equipos Registradas</h6>
-                                <table class="table table-bordered text-center table-responsive">
-                                    <thead class="text-white" style="background-color:#16A085;">
-                                        <th> Nombre </th>
-                                        <th> Descripción </th>
-                                        <th> Fecha registro </th>
-                                        <th> Opciones</th>
-                                    </thead>
-                                    <?php
-                                    $registros = $equiController->listaEquipos();
+                                <div class="table-responsive">
+                                    <table class="table table-bordered text-center">
+                                        <thead class="text-white" style="background-color:#16A085;">
+                                            <th> Nombre </th>
+                                            <th> Descripción </th>
+                                            <th> Fecha registro </th>
+                                            <th> Opciones</th>
+                                        </thead>
+                                        <?php
+                                        $registros = $equiController->listaEquipos();
 
-                                    foreach ($registros as $reg) {
-                                    ?>
-                                        <tr>
-                                            <form action="Views/Administrador/equipos/index.php" method="GET">
-                                                <td><?php echo $reg->nombre ?></td>
-                                                <td><?php echo $reg->descripcion ?></td>
-                                                <td><?php echo date_format(date_create($reg->fecha_registro), "d-m-Y"); ?></td>
-                                                <td>
-                                                    <button class="btn btn-sm text-white" style="background-color:#CEA228" type="submit" name="action" value="edit">
-                                                        <i class="bi bi-pencil-square"></i>
-                                                    </button>
+                                        foreach ($registros as $reg) {
+                                        ?>
+                                            <tr>
+                                                <form action="Views/Administrador/equipos/index.php" method="GET">
+                                                    <td><?php echo $reg->nombre ?></td>
+                                                    <td><?php echo $reg->descripcion ?></td>
+                                                    <td><?php echo date_format(date_create($reg->fecha_registro), "d-m-Y"); ?></td>
+                                                    <td>
+                                                        <button class="btn btn-sm text-white" style="background-color:#CEA228" type="submit" name="action" value="edit">
+                                                            <i class="bi bi-pencil-square"></i>
+                                                        </button>
 
-                                                    <button class="btn btn-sm text-white" style="background-color:#85929E" type="submit" name="delete" value="delete">
-                                                        <i class='bi bi-x-circle'></i> </button>
+                                                        <button class="btn btn-sm text-white" style="background-color:#85929E" type="submit" name="delete" value="delete">
+                                                            <i class='bi bi-x-circle'></i> </button>
 
-                                                    <a href="Views/Administrador/equipos/integrantes.php?id_equipo=<?php echo $reg->id_equipo ?>" class="btn btn-sm text-white" 
-                                                        style="background-color:#138D75"> <i class="bi bi-people"></i> </a>
+                                                        <a href="Views/Administrador/equipos/integrantes.php?id_equipo=<?php echo $reg->id_equipo ?>" class="btn btn-sm text-white" 
+                                                            style="background-color:#138D75"> <i class="bi bi-people"></i> </a>
 
-                                                </td>
-                                                <input type="hidden" name="id_equipo" value="<?php echo $reg->id_equipo ?>">
-                                            </form>
-                                        </tr>
-                                    <?php
-                                    }
-                                    ?>
-                                </table>
+                                                    </td>
+                                                    <input type="hidden" name="id_equipo" value="<?php echo $reg->id_equipo ?>">
+                                                </form>
+                                            </tr>
+                                        <?php
+                                        }
+                                        ?>
+                                    </table>
+                                </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </main>
