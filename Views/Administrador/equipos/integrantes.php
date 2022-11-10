@@ -71,7 +71,7 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
                 ?>
 
                 <div class="container">
-                    <div class="pt-1 bg-light pb-2" style="border-radius: 15px;">
+                    <div class="bg-light">
                         <?php
                         $action = isset($_GET['action']) ? $_GET['action'] : "new";
                         switch ($action) {
@@ -122,7 +122,7 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
                                                 <button class="btn btn-sm text-white" style="background-color:#85929E" type="submit" name="delete" value="delete">
                                                     <i class='bi bi-x-circle'></i> </button>
 
-                                                <a href="Views/Administrador/equipos/integrantes.php?id_equipo=<?php echo $reg->id_equipo ?>" class="btn btn-sm text-white" style="background-color:#138D75"> <i class="bi bi-people"></i> </a>
+                                                <a href="Views/Administrador/equipos/integrantes.php?id_equipo=<?php echo $reg->id_equipo ?>" class="d-none btn btn-sm text-white" style="background-color:#138D75"> <i class="bi bi-people"></i> </a>
                                             </td>
                                             <input type="hidden" name="id_licenciatura" value="<?php echo $reg->id_licenciatura ?>">
                                             <input type="hidden" name="id_equipo" value="<?php echo $reg->id_equipo ?>">
