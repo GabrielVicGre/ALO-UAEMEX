@@ -82,7 +82,7 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
                             <div class="p-2 bg-light">
                                 <h6 class="pb-4 pt-2 text-center">Equipos Registradas</h6>
                                 <div class="p-1 table-responsive">
-                                    <table id="tabla-equipos" class="text-center align-middle table table-striped table-bordered nowrap" style="width:100%">
+                                    <table id="tabla-equipos" class="align-middle table table-striped table-bordered nowrap" style="width:100%">
                                         <thead class="text-white" style="background-color:#16A085;">
                                             <th class="text-center"> Nombre </th>
                                             <th class="text-center"> Descripción </th>
@@ -96,7 +96,10 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
                                         ?>
                                             <tr>
                                                 <form action="Views/Administrador/equipos/index.php" method="GET">
-                                                    <td><?php echo $reg->nombre ?></td>
+                                                    <td class="text-left">
+                                                        <img width="25px" style="border-radius: 20px;" src="https://cdn-icons-png.flaticon.com/512/8556/8556998.png" class="img-fluid mx-1" alt="...">
+                                                        <?php echo $reg->nombre ?>
+                                                    </td>
                                                     <td><?php echo $reg->descripcion ?></td>
                                                     <td><?php echo date_format(date_create($reg->fecha_registro), "d-m-Y"); ?></td>
                                                     <td>
@@ -143,9 +146,6 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
                
             });
         });*/
-        
-        
-
     </script>
 
 

@@ -5,8 +5,8 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
 } else {
     $_SESSION['opcion'] = 'equipos';
     $ruta =  $_SERVER['DOCUMENT_ROOT'];
-    include_once($ruta."/Controllers/Administrador/equiposControlador.php");
-    include_once($ruta."/Controllers/Administrador/jugadoresControlador.php");
+    include_once($ruta . "/Controllers/Administrador/equiposControlador.php");
+    include_once($ruta . "/Controllers/Administrador/jugadoresControlador.php");
 
     $equiController = new equiposControlador();
     $equipo = $equiController->getDatosEquipoById($_GET['id_equipo']);
@@ -22,7 +22,7 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
 <head>
     <?php include "../layouts/head-layout.php"; ?>
     <style>
-     /*   .dataTables_length{
+        /*   .dataTables_length{
             text-align: left !important;
         }*/
     </style>
@@ -61,13 +61,13 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
                 if (isset($_POST['add'])) {
                     $jugController->addJugador();
                 }
-               if (isset($_POST['update'])) {
+                if (isset($_POST['update'])) {
                     $jugController->editJugador();
                 }
                 if (isset($_GET['delete'])) {
                     $jugController->deleteJugador();
                 }
-            
+
                 ?>
 
                 <div class="container">
@@ -89,9 +89,9 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
                     </div>
                 </div>
 
-                <div class="pt-3 container text-center">
+                <div class="pt-3 container">
                     <div class="p-1 table-responsive">
-                        <table id="tabla-jugadores" class="text-center align-middle table table-striped table-bordered nowrap" style="width:100%">
+                        <table id="tabla-jugadores" class="align-middle table table-striped table-bordered " style="width:100%">
                             <thead class="text-white" style="background-color:#16A085;">
                                 <tr>
                                     <th class="text-center"> Nombre </th>
@@ -109,12 +109,15 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
                                 ?>
                                     <tr>
                                         <form action="Views/Administrador/equipos/integrantes.php?id_equipo=<?php echo $_GET['id_equipo'] ?>" method="GET">
-                                            <td><?php echo $reg->nombre ?></td>
-                                            <td><?php echo $reg->edad ?></td>
-                                            <td><?php echo $reg->es_capitan ?></td>
-                                            <td><?php echo $reg->correo ?></td>
-                                            <td><?php echo $reg->licenciatura ?></td>
-                                            <td>
+                                            <td class="text-left">
+                                                <img width="25px" style="border-radius: 20px;" src="https://cdn-icons-png.flaticon.com/512/2348/2348811.png" class="img-fluid mx-1" alt="...">
+                                                <?php echo $reg->nombre ?>
+                                            </td>
+                                            <td class="text-center"><?php echo $reg->edad ?></td>
+                                            <td class="text-center"><?php echo $reg->es_capitan ?></td>
+                                            <td class="text-center"><?php echo $reg->correo ?></td>
+                                            <td class="text-center"><?php echo $reg->licenciatura ?></td>
+                                            <td class="text-center">
                                                 <button class="btn btn-sm text-white" style="background-color:#CEA228" type="submit" name="action" value="edit">
                                                     <i class="bi bi-pencil-square"></i>
                                                 </button>
@@ -135,8 +138,10 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
                                 ?>
                             </tbody>
                         </table>
-                    </div>            
-                    <a class="btn btn-sm btn-success" href="Views/Administrador/equipos/index.php">Regresar</a>
+                    </div>
+                    <div class="text-center">
+                        <a class="btn btn-sm btn-success" href="Views/Administrador/equipos/index.php">Regresar</a> <br><br>
+                    </div>
                 </div>
 
             </main>

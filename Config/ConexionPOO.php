@@ -16,7 +16,7 @@ $ruta =  $_SERVER['DOCUMENT_ROOT'];
     }
 }*/
 
-
+/*
     $user = "Administrador@sbd-alo-fi";
     $password = "3Fl760wnL8b@";
     $server = "sbd-alo-fi.mysql.database.azure.com";
@@ -25,7 +25,7 @@ $ruta =  $_SERVER['DOCUMENT_ROOT'];
         PDO::MYSQL_ATTR_SSL_CA => $ruta.'/Assets/SSL/BaltimoreCyberTrustRoot.crt.pem'
     );
     $conexion = new PDO('mysql:host='.$server.';port=3306;dbname='.$database , $user, $password, $options);
-
+*/
 
 /* ====================          CONEXIÓN A SERVIDOR LOCAL       ==================================*/
 /*
@@ -46,7 +46,7 @@ class ConexionPOO {
 }
 */
 
-/*
+
 $user = "root";
 $password = "";
 try {
@@ -56,7 +56,7 @@ try {
 } catch (PDOException $e) {
     print "¡Error!: " . $e->getMessage() . "<br/>";
     die();
-}*/
+}
 
 
 ?>
