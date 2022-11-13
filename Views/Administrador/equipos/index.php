@@ -125,6 +125,7 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
                         </div>
                     </div>
                 </div>
+                
             </main>
 
         </div>
