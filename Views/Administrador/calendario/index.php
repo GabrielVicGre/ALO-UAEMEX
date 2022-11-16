@@ -9,11 +9,15 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
     $equiController = new equiposControlador();
     include_once($ruta . "/Controllers/Administrador/canchasControlador.php");
     $canchasController = new canchasControlador();
+    include_once($ruta . "/Controllers/Administrador/partidosControlador.php");
+    $partidoController = new partidosControlador();
+
 }
+
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
     <?php include "../layouts/head-layout.php"; ?>
@@ -51,14 +55,14 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
 
                 <?php
                 if (isset($_POST['add'])) {
-                    $canchasController->addCancha();
+                    $partidoController->addPartido();
                 }
-             /*   if (isset($_POST['update'])) {
-                    $canchasController->editCancha();
+                if (isset($_POST['update'])) {
+                    $partidoController->editPartido();
                 }
                 if (isset($_GET['delete'])) {
-                    $canchasController->deleteCancha($_GET['id_cancha']);
-                }*/
+                    $partidoController->deletePartido($_GET['id_partido']);
+                }
                 ?>
 
 
@@ -82,37 +86,60 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
                                 ?>
                             </div>
                         </div>
-                        <div class="col-12 col-lg-8">
+                        <div class="col-12">
                             <div class="pt-3">
                                 <div class="card border-0">
                                     <div class="card-header text-center fw-bold">
-                                        <spam class="h6 text-muted">Canchas registradas</spam>
+                                        <spam class="h6 text-muted">Partidos registradas</spam>
 
                                     </div>
                                     <div class="p-1 table-responsive">
                                         <table id="tabla-equipos" class="align-middle table table-striped table-bordered nowrap" style="width:100%">
                                             <thead class="text-white" style="background-color:#16A085;">
-                                                <th class="text-center"> Nombre </th>
-                                                <th class="text-center"> Dirección </th>
-                                                <th class="text-center"> Mapa</th>
+                                                <th class="text-center"> Encuentro </th>
+                                                <th class="text-center"> No. Jornada </th>
+                                                <th class="text-center"> Fecha</th>
+                                                <th class="text-center"> Hora</th>
+                                                <th class="text-center"> G. Local</th>
+                                                <th class="text-center"> G. Visitante</th>
+                                                <th class="text-center"> Cancha</th>
+                                                <th class="text-center"> Descripción</th>
                                                 <th class="text-center"> Opciones</th>
-                                            </thead>
+                                            </thead>                                               
+
                                             <?php
-                                            $canchas = $canchasController->listaCanchas();
-                                            foreach ($canchas as $reg) {
+                                            $partidos = $partidoController->listaPartidos();
+                                            foreach ($partidos as $reg) {
                                             ?>
                                                 <tr>
-                                                    <form action="Views/Administrador/canchas/index.php" method="GET">
-                                                        <td class="text-left">
-                                                            <img width="25px" style="border-radius: 2px;" src="https://cdn-icons-png.flaticon.com/512/3461/3461128.png" class="img-fluid mx-1" alt="...">
-                                                            <?php echo $reg->nombre ?>
-                                                        </td>
-                                                        <td class="text-center" width="45%"><?php echo $reg->direccion ?></td>
+                                                    <form action="Views/Administrador/calendario/index.php" method="GET">
                                                         <td class="text-center">
-                                                            <a href="<?php echo $reg->url ?>" target="_blank">
-                                                                <img width="25px" style="border-radius: 20px;" src="https://cdn-icons-png.flaticon.com/512/854/854901.png" class="img-fluid mx-1" alt="...">
-                                                            </a>
+                                                            <?php echo $reg->equipo_local ?> <b>VS</b> <?php echo $reg->equipo_visitante ?>
                                                         </td>
+                                                        <td class="text-center"> <?php echo $reg->no_jornada ?> </td>
+                                                        <td class="text-center"> <?php echo $reg->fecha ?> </td>
+                                                        <td class="text-center"> <?php echo $reg->hora ?> </td>
+                                                        <td class="text-center fw-bold"> 
+                                                            <?php 
+                                                            if($reg->goles_local == 0){
+                                                                echo '---';
+                                                            }else{
+                                                                echo $reg->goles_local; 
+                                                            }
+                                                            ?> 
+                                                        </td>
+                                                        <td class="text-center fw-bold"> 
+                                                        <?php 
+                                                            if($reg->goles_visitante == 0){
+                                                                echo '---';
+                                                            }else{
+                                                                echo $reg->goles_visitante; 
+                                                            }
+                                                            ?> 
+                                                        </td>
+                                                        <td class="text-center"> <?php echo $reg->nombre_cancha ?> </td>
+                                                        <td class="text-center"> <?php echo $reg->descripcion ?> </td>
+
                                                         <td class="text-center" width="15%">
                                                             <button class="btn btn-sm text-white" style="background-color:#CEA228" type="submit" name="action" value="edit">
                                                                 <i class="bi bi-pencil-square"></i>
@@ -120,7 +147,7 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
                                                             <button class="btn btn-sm text-white" style="background-color:#85929E" type="submit" name="delete" value="delete">
                                                                 <i class='bi bi-x-circle'></i> </button>
                                                         </td>
-                                                        <input type="hidden" name="id_cancha" value="<?php echo $reg->id_cancha ?>">
+                                                        <input type="hidden" name="id_partido" value="<?php echo $reg->id_partido ?>">
                                                     </form>
                                                 </tr>
                                             <?php
@@ -133,16 +160,15 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
                         </div>
                     </div>
                 </div>
-
-
-                
-
-            
-
                
             </main>
         </div>
     </div>
+    <script>
+        if (window.history.replaceState) { // PARA NO ENVIAR EL FORMULARIO DOS VECES
+            window.history.replaceState(null, null, window.location.href);
+        }
+    </script>
 
 
 

@@ -2,7 +2,7 @@
 $ruta =  $_SERVER['DOCUMENT_ROOT'];
 include_once($ruta."/Config/ConexionPOO.php");
 
-class canchasModelo{
+class canchasModelo {
 
     public function agregaCancha($nombre,$dir,$url){
         global $conexion;
@@ -10,7 +10,6 @@ class canchasModelo{
         $query = $conexion->prepare($sql);
         $query->execute();
     }
-
 
     public function recuperaCanchas(){
         global $conexion;

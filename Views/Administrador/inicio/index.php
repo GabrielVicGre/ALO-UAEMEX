@@ -7,7 +7,6 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
     $ruta =  $_SERVER['DOCUMENT_ROOT'];
     include_once($ruta."/Controllers/Administrador/inicioControlador.php");
     $inicioController = new inicioControlador();
-
 }
 ?>
 

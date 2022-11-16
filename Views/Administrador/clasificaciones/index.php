@@ -4,6 +4,9 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
     header("Location: ../../../index.php");
 } else {
     $_SESSION['opcion'] = 'clasificaciones';
+    $ruta =  $_SERVER['DOCUMENT_ROOT'];
+    include_once($ruta."/Controllers/Administrador/clasificacionesControlador.php");
+    $clasificaciones_Controller = new clasificacionesControlador();
 }
 ?>
 
