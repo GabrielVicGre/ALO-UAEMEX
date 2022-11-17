@@ -23,17 +23,10 @@ $_SESSION['opcion'] = 'inicio';
                     <h4 class="h5">Inicio</h4>
                     <div class="btn-toolbar mb-2 mb-md-0">
                         <div class="btn-group me-2">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">
-                                Share
-                            </button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">
-                                Export
+                            <button type="button" class="btn btn-success" style="width: 200px;"> <i class="bi bi-person-fill mx-1"></i>
+                                Invitado
                             </button>
                         </div>
-                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                            <span data-feather="calendar" class="align-text-bottom"></span>
-                            This week
-                        </button>
                     </div>
                 </div>
 
@@ -43,8 +36,6 @@ $_SESSION['opcion'] = 'inicio';
             
         </div>
     </div>
-
-
 </body>
 
 </html>

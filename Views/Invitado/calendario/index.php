@@ -1,6 +1,14 @@
 <?php
 session_start();
 $_SESSION['opcion'] = 'calendario';
+
+$ruta =  $_SERVER['DOCUMENT_ROOT'];
+include_once($ruta . "/Controllers/Administrador/equiposControlador.php");
+$equiController = new equiposControlador();
+include_once($ruta . "/Controllers/Administrador/canchasControlador.php");
+$canchasController = new canchasControlador();
+include_once($ruta . "/Controllers/Administrador/partidosControlador.php");
+$partidoController = new partidosControlador();
 ?>
 
 
@@ -24,28 +32,17 @@ $_SESSION['opcion'] = 'calendario';
                     <h4 class="h5">Calendario</h4>
                     <div class="btn-toolbar mb-2 mb-md-0">
                         <div class="btn-group me-2">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">
-                                Share
-                            </button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">
-                                Export
+                            <button type="button" class="btn btn-success" style="width: 200px;">  <i class="bi bi-person-fill mx-1"></i>
+                                Invitado
                             </button>
                         </div>
-                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                            <span data-feather="calendar" class="align-text-bottom"></span>
-                            This week
-                        </button>
                     </div>
                 </div>
 
                 <?php include "contenido-layout.php"; ?>
-               
             </main>
-            
         </div>
     </div>
-
-
 </body>
 
 </html>

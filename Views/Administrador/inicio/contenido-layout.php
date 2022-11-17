@@ -1,6 +1,5 @@
 <?php
 $num_equipos =  $inicioController->getTotalEquipos();
-
 ?>
 <div class="card text-center mt-4">
     <div class="card-header">
@@ -37,7 +36,6 @@ $num_equipos =  $inicioController->getTotalEquipos();
                                 <b class="h2"> <?php echo $num_equipos ?> </b><br>
                                 Jugadores registrados
                             </a>
-
                         </div>
                     </div>
                 </div>

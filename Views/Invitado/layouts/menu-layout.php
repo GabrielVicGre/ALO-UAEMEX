@@ -13,6 +13,12 @@
             </a>
         </li>
         <li class="nav-item mx-1">
+            <a class="nav-link text-white <?php echo ($_SESSION['opcion'] == 'grupos') ? 'selected' : '' ?>" href="Views/Invitado/grupos/index.php">
+                <i class="bi bi-pentagon-half mx-2"></i>
+                Grupos
+            </a>
+        </li>
+        <li class="nav-item mx-1">
             <a class="nav-link text-white <?php echo ($_SESSION['opcion'] == 'calendario') ? 'selected' : '' ?>" href="Views/Invitado/calendario/index.php">
                 <i class="bi bi-calendar2-week-fill mx-2"></i>
                 Calendario

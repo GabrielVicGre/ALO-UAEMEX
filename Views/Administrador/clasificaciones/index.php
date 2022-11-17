@@ -47,11 +47,7 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
                 </div>
 
 
-                <?php include "contenido-layout.php"; ?>
-
-            
-
-               
+                <?php include "contenido-layout.php"; ?>               
             </main>
         </div>
     </div>
