@@ -11,9 +11,9 @@ class partidoModelo {
         $query->execute();
     }
 
-    public function agregaPartido($id_loc, $id_vis, $no_j, $fecha, $hora, $goles_local, $goles_visitante,$id_cancha, $descripcion){
+    public function agregaPartido($id_loc, $id_vis, $no_j, $fecha, $hora, $goles_local, $goles_visitante,$id_cancha, $status, $descripcion){
         global $conexion;
-        $sql = "INSERT INTO partidos VALUES (NULL, $id_loc, $id_vis, $no_j, '$fecha', '$hora', $goles_local, $goles_visitante, $id_cancha, '$descripcion') ";
+        $sql = "INSERT INTO partidos VALUES (NULL, $id_loc, $id_vis, $no_j, '$fecha', '$hora', $goles_local, $goles_visitante, $id_cancha, '$status', '$descripcion') ";
         $query = $conexion->prepare($sql);
         $query->execute();                               
     }
@@ -41,12 +41,13 @@ class partidoModelo {
         return $results[0];
     }
 
-    public function editaPartido($id_partido,$id_loc,$id_vis, $no_j, $fecha, $hora,$goles_local, $goles_visitante,$id_cancha, $descripcion){
+    public function editaPartido($id_partido,$id_loc,$id_vis, $no_j, $fecha, $hora,$goles_local,
+                                 $goles_visitante,$id_cancha,$status,$descripcion){
         global $conexion;
         $sql = "UPDATE partidos".
         " SET id_eq_local='$id_loc', id_eq_visitante='$id_vis',no_jornada='$no_j',
           fecha='$fecha', hora='$hora', goles_local='$goles_local', goles_visitante='$goles_visitante',
-          id_cancha='$id_cancha', descripcion='$descripcion' "." WHERE id_partido = $id_partido";
+          id_cancha='$id_cancha',status='$status',descripcion='$descripcion' "." WHERE id_partido = $id_partido";
         $query = $conexion->prepare($sql);
         $query->execute();
     }

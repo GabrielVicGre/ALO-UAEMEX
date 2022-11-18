@@ -1,7 +1,10 @@
 <?php
-    $ruta =  $_SERVER['DOCUMENT_ROOT'];
-    include_once($ruta . "/Controllers/Administrador/canchasControlador.php");
-    $canchasController = new canchasControlador();
+session_start();
+$_SESSION['opcion'] = 'canchas';
+
+$ruta =  $_SERVER['DOCUMENT_ROOT'];
+include_once($ruta . "/Controllers/Administrador/canchasControlador.php");
+$canchasController = new canchasControlador();
 ?>
 
 <!DOCTYPE html>
@@ -10,11 +13,12 @@
 <head>
     <?php include "../layouts/head-layout.php"; ?>
     <style>
-        .totales{
+        .totales {
             text-decoration: none;
             color: #34495E;
         }
-        .totales:hover{
+
+        .totales:hover {
             color: #283747;
         }
     </style>
@@ -33,13 +37,7 @@
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h4 class="h5">Inicio</h4>
-                    <div class="btn-toolbar mb-2 mb-md-0">
-                        <div class="btn-group me-2">
-                            <button type="button" class="btn btn-success" style="width: 200px;">  <i class="bi bi-person-fill mx-1"></i>
-                                Invitado
-                            </button>
-                        </div>
-                    </div>
+                    <?php include "../layouts/user-layout.php"; ?>
                 </div>
 
                 <?php include "contenido-layout.php"; ?>

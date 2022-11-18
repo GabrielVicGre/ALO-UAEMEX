@@ -11,7 +11,6 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
     $canchasController = new canchasControlador();
     include_once($ruta . "/Controllers/Administrador/partidosControlador.php");
     $partidoController = new partidosControlador();
-
 }
 
 ?>
@@ -32,24 +31,11 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
             <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
                 <?php include "../layouts/menu-layout.php"; ?>
             </nav>
-    
+
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
                     <h4 class="h5">Calendario</h4>
-                    <div class="btn-toolbar mb-2 mb-md-0">
-                        <div class="btn-group me-2">
-                            <button type="button" class="btn btn-sm btn-outline-secondary">
-                                Share
-                            </button>
-                            <button type="button" class="btn btn-sm btn-outline-secondary">
-                                Export
-                            </button>
-                        </div>
-                        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-                            <span data-feather="calendar" class="align-text-bottom"></span>
-                            This week
-                        </button>
-                    </div>
+                    <?php include "../layouts/user-layout.php"; ?>
                 </div>
 
 
@@ -103,9 +89,10 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
                                                 <th class="text-center"> G. Local</th>
                                                 <th class="text-center"> G. Visitante</th>
                                                 <th class="text-center"> Cancha</th>
+                                                <th class="text-center"> Status</th>
                                                 <th class="text-center"> Descripción</th>
                                                 <th class="text-center"> Opciones</th>
-                                            </thead>                                               
+                                            </thead>
 
                                             <?php
                                             $partidos = $partidoController->listaPartidos();
@@ -119,28 +106,39 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
                                                         <td class="text-center"> <?php echo $reg->no_jornada ?> </td>
                                                         <td class="text-center"> <?php echo $reg->fecha ?> </td>
                                                         <td class="text-center"> <?php echo $reg->hora ?> </td>
-                                                        <td class="text-center fw-bold"> 
-                                                            <?php 
-                                                            if($reg->goles_local == 0){
+                                                        <td class="text-center fw-bold">
+                                                            <?php
+                                                            if($reg->status == "por_jugar" && $reg->goles_local == 0 ){
                                                                 echo '---';
                                                             }else{
-                                                                echo $reg->goles_local; 
+                                                                echo $reg->goles_local;
                                                             }
-                                                            ?> 
+                                                            ?>
                                                         </td>
-                                                        <td class="text-center fw-bold"> 
-                                                        <?php 
-                                                            if($reg->goles_visitante == 0){
+                                                        <td class="text-center fw-bold">
+                                                            <?php
+                                                            if ($reg->status == "por_jugar" && $reg->goles_visitante == 0) {
                                                                 echo '---';
-                                                            }else{
-                                                                echo $reg->goles_visitante; 
+                                                            } else {
+                                                                echo $reg->goles_visitante;
                                                             }
-                                                            ?> 
+                                                            ?>
                                                         </td>
                                                         <td class="text-center"> <?php echo $reg->nombre_cancha ?> </td>
+                                                        <td class="text-center"> 
+                                                            <?php 
+                                                            if($reg->status == "jugado"){
+                                                                echo '<span class="badge text-bg-secondary">Jugado</span>';
+                                                            }elseif($reg->status == "por_jugar"){
+                                                                echo '<span class="badge text-bg-success">Por jugar</span>';
+                                                            }else{
+                                                                echo '---';  
+                                                            }
+                                                            ?> 
+                                                        </td>
                                                         <td class="text-center"> <?php echo $reg->descripcion ?> </td>
 
-                                                        <td class="text-center" width="15%">
+                                                        <td class="text-center" width="10%">
                                                             <button class="btn btn-sm text-white" style="background-color:#CEA228" type="submit" name="action" value="edit">
                                                                 <i class="bi bi-pencil-square"></i>
                                                             </button>
@@ -160,7 +158,7 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
                         </div>
                     </div>
                 </div>
-               
+
             </main>
         </div>
     </div>

@@ -12,22 +12,26 @@
             <th class="text-center"> PG </th>
             <th class="text-center"> PE </th>
             <th class="text-center"> PP </th>
-            <th class="text-center"> GF </th>
-            <th class="text-center"> GC</th>
             <th class="text-center"> Puntos </th>
         </thead>
 
         <?php
         $clas = $clasificaciones_Controller->calculaClasificacion();
-
-        foreach ($clas as $reg) {
+        for ($i = 0; $i < count($clas); $i++) {
+      
         ?>
-            <tr>
-                <td class="text-center"> <?php echo $reg->nombre ?> </td>
+        <tr>
+            <td> <?php echo $i+1 ?> </td>
+            <td> <?php echo $clas[$i]['nombre'] ?> </td>
+            <td> <?php echo $clas[$i]['pj'] ?> </td>
+            <td> <?php echo $clas[$i]['pg'] ?> </td>
+            <td> <?php echo $clas[$i]['pe'] ?> </td>
+            <td> <?php echo $clas[$i]['pp'] ?> </td>
+            <td> <?php echo $clas[$i]['puntos'] ?> </td>
+        </tr>
 
-            </tr>
         <?php
-        }
+         }
         ?>
     </table>
 

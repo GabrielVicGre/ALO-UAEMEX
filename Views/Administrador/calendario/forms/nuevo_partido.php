@@ -62,7 +62,16 @@ $canchas = $canchasController->listaCanchas();
                                     ?>
                                 </select>
                             </div>
-                            <div class="col-12 col-lg-5">
+                            <div class="col-12 col-lg-2">
+                                <label for="status" class="form-label">Status del partido:</label>
+                                <select name="status" id="status" class="form-select" required>
+                                    <option value="" selected disabled>Opciones</option>
+                                    <option value="jugado">Jugado</option>
+                                    <option value="por_jugar">Por jugar</option>
+                                </select>
+                            </div>
+
+                            <div class="col-12 col-lg-3">
                                 <label for="descripcion" class="form-label">Descripción:</label>
                                 <input type="text" name="descripcion" class="form-control" id="descripcion" required> <br>
                             </div>

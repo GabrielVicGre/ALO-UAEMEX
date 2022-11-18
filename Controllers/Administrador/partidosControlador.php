@@ -18,9 +18,10 @@ class partidosControlador {
         $goles_local = $_POST['goles_local'];
         $goles_visitante = $_POST['goles_visitante'];
         $id_cancha = $_POST['id_cancha'];
+        $status = $_POST['status'];
         $descripcion = $_POST['descripcion'];
         $this->model->agregaPartido( $id_loc,$id_vis, $no_j, $fecha, $hora, 
-                                    $goles_local, $goles_visitante,$id_cancha, $descripcion);
+                                    $goles_local, $goles_visitante,$id_cancha,$status,$descripcion);
     }
 
     function listaPartidos(){
@@ -43,9 +44,11 @@ class partidosControlador {
         $goles_local = $_POST['goles_local'];
         $goles_visitante = $_POST['goles_visitante'];
         $id_cancha = $_POST['id_cancha'];
+        $status = $_POST['status'];
         $descripcion = $_POST['descripcion'];
         $this->model->editaPartido($id_partido,$id_loc,$id_vis, $no_j, $fecha, $hora, 
-                                    $goles_local, $goles_visitante,$id_cancha, $descripcion);
+                                    $goles_local, $goles_visitante,$id_cancha,$status,
+                                    $descripcion);
     }
 
     function deletePartido($id_partido){
