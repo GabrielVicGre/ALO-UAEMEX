@@ -1,10 +1,16 @@
 <?php
+
+session_start();
+$_SESSION['opcion'] = 'grupos';
+
 $ruta =  $_SERVER['DOCUMENT_ROOT'];
 include_once($ruta . "/Controllers/Administrador/gruposControlador.php");
 $grupoController = new gruposControlador();
 include_once($ruta . "/Controllers/Administrador/equiposControlador.php");
 $equiController = new equiposControlador();
+
 ?>
+
 
 <!DOCTYPE html>
 <html>
