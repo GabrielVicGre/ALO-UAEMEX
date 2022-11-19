@@ -80,7 +80,7 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
 
                                     </div>
                                     <div class="p-1 table-responsive">
-                                        <table id="tabla-equipos" class="align-middle table table-striped table-bordered nowrap" style="width:100%">
+                                        <table id="tabla-equipos" class="align-middle table table-sm table-striped table-bordered nowrap" style="width:100%">
                                             <thead class="text-white" style="background-color:#16A085;">
                                                 <th class="text-center"> Encuentro </th>
                                                 <th class="text-center"> No. Jornada </th>
