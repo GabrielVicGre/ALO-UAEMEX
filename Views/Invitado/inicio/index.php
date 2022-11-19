@@ -8,6 +8,7 @@ $_SESSION['opcion'] = 'inicio';
 
 <head>
     <?php include "../layouts/head-layout.php"; ?>
+   
 </head>
 
 <body>

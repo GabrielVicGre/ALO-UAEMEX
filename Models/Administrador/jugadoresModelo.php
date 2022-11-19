@@ -60,6 +60,15 @@ class jugadoresModelo{
         $query->execute();
     }
 
+    public function RecuperaNumeroJugadores(){
+        global $conexion;
+        $sql = "SELECT * FROM jugadores";
+        $query = $conexion->prepare($sql);
+        $query->execute();
+        $total = $query->rowCount();
+        return $total;
+    }
+
 
   
 }

@@ -46,6 +46,14 @@ class canchasModelo {
         $query->execute();
     }
 
+    public function RecuperaNumeroCanchas(){
+        global $conexion;
+        $sql = "SELECT * FROM canchas";
+        $query = $conexion->prepare($sql);
+        $query->execute();
+        $total = $query->rowCount();
+        return $total;
+    }
 
 }
 

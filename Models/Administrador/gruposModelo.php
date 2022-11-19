@@ -58,5 +58,14 @@ class gruposModelo{
         return $grupoequipo;
     }
 
+    public function RecuperaNumeroGrupos(){
+        global $conexion;
+        $sql = "SELECT * FROM grupos";
+        $query = $conexion->prepare($sql);
+        $query->execute();
+        $total = $query->rowCount();
+        return $total;
+    }
+
   
 }

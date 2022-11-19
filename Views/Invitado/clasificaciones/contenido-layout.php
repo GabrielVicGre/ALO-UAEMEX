@@ -13,25 +13,28 @@
             <th class="text-center"> PP </th>
             <th class="text-center"> Puntos </th>
         </thead>
+        <tbody style="background-color:#FFF;" class="text-center">
+            <?php
+            $clas = $clasificaciones_Controller->calculaClasificacion();
+            for ($i = 0; $i < count($clas); $i++) {
 
-        <?php
-        $clas = $clasificaciones_Controller->calculaClasificacion();
-        for ($i = 0; $i < count($clas); $i++) {
-      
-        ?>
-        <tr>
-            <td> <?php echo $i+1 ?> </td>
-            <td> <?php echo $clas[$i]['nombre'] ?> </td>
-            <td> <?php echo $clas[$i]['pj'] ?> </td>
-            <td> <?php echo $clas[$i]['pg'] ?> </td>
-            <td> <?php echo $clas[$i]['pe'] ?> </td>
-            <td> <?php echo $clas[$i]['pp'] ?> </td>
-            <td> <?php echo $clas[$i]['puntos'] ?> </td>
-        </tr>
+            ?>
+                <tr>
+                    <td> <?php echo $i + 1 ?> </td>
+                    <td> <?php echo $clas[$i]['nombre'] ?> </td>
+                    <td> <?php echo $clas[$i]['pj'] ?> </td>
+                    <td> <?php echo $clas[$i]['pg'] ?> </td>
+                    <td> <?php echo $clas[$i]['pe'] ?> </td>
+                    <td> <?php echo $clas[$i]['pp'] ?> </td>
+                    <td> <?php echo $clas[$i]['puntos'] ?> </td>
+                </tr>
 
-        <?php
-         }
-        ?>
+            <?php
+            }
+            ?>
+        </tbody>
+
+
     </table>
 
 

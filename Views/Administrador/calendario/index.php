@@ -93,6 +93,7 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
                                                 <th class="text-center"> Descripción</th>
                                                 <th class="text-center"> Opciones</th>
                                             </thead>
+                                            <tbody>
 
                                             <?php
                                             $partidos = $partidoController->listaPartidos();
@@ -151,6 +152,7 @@ if (empty($_SESSION['usuario']) || $_SESSION['tipo_usuario'] != 'Administrador')
                                             <?php
                                             }
                                             ?>
+                                            </tbody>
                                         </table>
                                     </div>
                                 </div>

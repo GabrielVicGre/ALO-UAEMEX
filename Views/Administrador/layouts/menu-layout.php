@@ -46,17 +46,18 @@
     </h6>
     <ul class="nav flex-column mb-2 mx-1">
         <li class="nav-item">
-            <a class="nav-link text-white <?php echo ($_SESSION['opcion'] == 'acercaDe') ? 'selected' : '' ?>" href="Views/Administrador/acercaDe/index.php">
-                <i class="bi bi-info-circle mx-2"></i>
-                Acerca de
-            </a>
-        </li>
-        <li class="nav-item">
             <a class="nav-link text-white <?php echo ($_SESSION['opcion'] == 'ayuda') ? 'selected' : '' ?>" href="Views/Administrador/ayuda/index.php">
                 <i class="bi bi-question-octagon mx-2"></i>
                 Ayuda
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link text-white <?php echo ($_SESSION['opcion'] == 'acercaDe') ? 'selected' : '' ?>" href="Views/Administrador/acercaDe/index.php">
+                <i class="bi bi-info-circle mx-2"></i>
+                Acerca de
+            </a>
+        </li>
+      
     </ul>
     <div class="d-grid pt-5 text-center">
         <a href="Config/Salir.php" class="btnSalir">
