@@ -46,6 +46,7 @@ class ConexionPOO {
 */
 
 /*
+
 $user = "root";
 $password = "";
 try {

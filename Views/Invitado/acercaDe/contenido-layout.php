@@ -4,7 +4,7 @@
             <h4 class="fw-light">ALO-FI  V.1.0</h4>
             <p style="font-size: 18px;" class="lead text-muted">Este software tiene como objetivo
                  administrar la información de los partidos de futbol 
-                que llevan a cabo en la Facultad de Ingeniería de la UAEMéx y mostrar 
+                se que llevan a cabo en la Facultad de Ingeniería de la UAEMéx y mostrar 
                 todos estos datos de manera atractiva a toda la comunidad estudiantil.
                 <br><h6 class="pt-0 text-secondary">Semestre 2022B</h6>
 
